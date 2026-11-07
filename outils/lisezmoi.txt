@@ -1,0 +1,30 @@
+FAIRE PARLER L'APPLICATION EN FON (ET DANS LES AUTRES LANGUES)
+
+Les téléphones n'ont pas de voix en fon, yoruba ou haoussa. Cet outil :
+  - traduit le texte des 40 sites dans 13 langues (dont le fon) avec Google Traduction ;
+  - fabrique un audio MP3 par site en fon, yoruba et haoussa avec les voix libres de Meta (MMS).
+
+ÉTAPES (gratuit, environ 30 minutes, sans rien installer) :
+  1. Allez sur https://colab.research.google.com et connectez-vous avec un compte Google.
+  2. Fichier > Importer un notebook > choisissez « generer_audio.ipynb » (ce dossier).
+  3. Lancez les 4 cellules une par une (bouton ▶).
+     À la cellule 2, envoyez « generer_audio.py » et « sites.json ».
+  4. Téléchargez « resultat_audio.zip ».
+  5. Décompressez-le DANS le dossier de l'application : il ajoute « textes.js » et le dossier « audio ».
+  6. Redéposez le dossier sur Netlify. C'est tout : l'appli parle fon quand on choisit Fɔ̀ngbè.
+
+FAIRE CORRIGER LES TEXTES PAR UN LOCUTEUR NATIF (recommandé)
+  La traduction automatique fait des erreurs. Après la 1re génération, ouvrez « textes.js »,
+  faites corriger un site, puis créez le fichier :
+      textes_manuels/fon/porte.txt
+        ligne 1 : nom du site en fon
+        ligne 2 : résumé en fon
+        lignes suivantes : histoire en fon
+  Mettez le dossier textes_manuels dans un zip « textes_manuels.zip », envoyez-le à la cellule 2
+  et relancez : les textes corrigés remplacent la traduction automatique, et l'audio est refait.
+  Même principe pour goun (gun), mina (gej), adja (ajg), bariba (bba), dendi (ddn) :
+  ces langues n'ont pas de traduction automatique, mais une voix existe peut-être ;
+  avec des textes manuels, l'outil fabrique aussi leur audio.
+
+ENREGISTREMENTS HUMAINS
+  Une vraie voix enregistrée reste la meilleure solution : voir audio/LISEZMOI.txt.

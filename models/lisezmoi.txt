@@ -1,0 +1,11 @@
+Vrais modèles 3D (optionnel)
+
+Chaque site a déjà une maquette 3D illustrative dessinée par l'application (fichier scene3d.js).
+Pour la remplacer par un vrai modèle 3D (relevé par photogrammétrie ou modélisé par un graphiste) :
+
+  1. Déposez le fichier au format .glb dans ce dossier, ex. models/porte.glb
+  2. Dans data.js, ajoutez sur le site : model: 'models/porte.glb'
+
+L'application charge alors ce modèle à la place de la maquette.
+Astuce : une centaine de photos prises tout autour d'un monument suffit pour créer un modèle
+avec des applications de photogrammétrie (ex. Polycam, RealityScan).
