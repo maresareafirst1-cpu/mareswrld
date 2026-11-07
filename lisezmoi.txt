@@ -1,32 +1,12 @@
-BÉNIN IMMERSION — application rose et blanc
+Enregistrements audio par langue (optionnel)
 
-CONTENU DU DOSSIER
-  index.html            page de l'application
-  styles.css            design (rose et blanc)
-  app.js                fonctionnement : comptes, carte, localisation, recherche...
-  data.js               BASE DE DONNÉES des 40 sites (modifiable facilement)
-  geo.js                carte du Bénin : frontières, 12 départements, fleuves (Natural Earth)
-  i18n.js               traductions (20 langues)
-  sw.js                 mode hors ligne
-  manifest.webmanifest, icon.svg, icon-192.png, icon-512.png   installation sur téléphone
-  scene3d.js            maquettes 3D des 40 sites
-  vendor/               bibliothèques : carte (Leaflet) et 3D (three.js)
-  audio/, models/       emplacements pour vos enregistrements audio et vrais modèles 3D
-  outils/               GÉNÉRER LES AUDIOS EN FON, YORUBA, HAOUSSA (+ textes en 13 langues) : voir outils/LISEZMOI.txt
+Déposez ici des fichiers MP3 enregistrés par des guides ou des locuteurs natifs,
+puis déclarez-les dans data.js sur le site concerné, par exemple :
 
-METTRE EN LIGNE SUR NETLIFY
-  1. Décompressez le zip.
-  2. Sur app.netlify.com > Sites > « Add new site » > « Deploy manually »,
-     glissez le DOSSIER entier (ou remplacez votre site actuel : Deploys > glisser-déposer).
-  3. Ouvrez l'adresse sur votre téléphone : créez un compte, autorisez la localisation.
+  {id: 'porte', ..., audio: {fon: 'audio/porte-fon.mp3', yo: 'audio/porte-yo.mp3'}, ...}
 
-IMPORTANT
-  - La localisation en temps réel ne marche qu'en https (Netlify le fait automatiquement).
-  - Les vraies photos et la carte viennent d'Internet (Wikipédia et OpenStreetMap) :
-    il faut du réseau la première fois ; ensuite elles restent en mémoire.
-  - Les comptes sont enregistrés sur le téléphone de chaque utilisateur.
-    Pour des comptes partagés entre appareils, il faudra un serveur (ex. Firebase ou Supabase).
-  - Fon, Goun, Mina, Adja, Bariba, Dendi : l'interface s'affiche pour l'instant en français.
-    Ajoutez les traductions dans i18n.js (sections fon, gun, gej, ajg, bba, ddn)
-    avec des locuteurs natifs. Faites aussi relire le yoruba et le haoussa.
-  - Ajouter un site : copiez un bloc dans data.js et changez les valeurs.
+Codes des langues : fr, en, fon, yo, gun, gej (mina), ajg (adja), bba (bariba), ddn (dendi),
+ha, sw, es, pt, de, it, nl, ru, ar, zh, ja.
+
+Quand un enregistrement existe, l'application le joue en priorité.
+Sinon elle lit le texte avec la voix du téléphone dans la langue choisie.
